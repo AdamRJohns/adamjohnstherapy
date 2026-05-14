@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adam Johns, LMFT | Therapy in Mountlake Terrace, WA</title>
+  <meta name="description" content="Adam Johns is a Licensed Marriage and Family Therapist in Mountlake Terrace, WA, specializing in neurodivergent adults, adults in transition, and the geek and gaming community.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf7f2;
+      --bg-soft: #f3eee5;
+      --ink: #2a2825;
+      --ink-soft: #58544e;
+      --ink-faint: #8a857d;
+      --accent: #3d5a4a;
+      --accent-hover: #2d4537;
+      --rule: #e3dccd;
+      --serif: "Source Serif 4", Georgia, serif;
+      --sans: "Inter Tight", -apple-system, BlinkMacSystemFont, sans-serif;
+      --max-width: 720px;
+      --max-width-wide: 1080px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+    a:hover { border-bottom-color: var(--accent); }
+
+    /* HEADER */
+    .site-header {
+      max-width: var(--max-width-wide);
+      margin: 0 auto;
+      padding: 2rem 2rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .site-name {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1.25rem;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .site-name a { color: var(--ink); border: none; }
+    .site-name .credentials {
+      font-style: italic;
+      color: var(--ink-faint);
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    nav a {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+      border: none;
+    }
+    nav a:hover { color: var(--accent); }
+
+    /* HERO */
+    .hero {
+      max-width: var(--max-width-wide);
+      margin: 0 auto;
+      padding: 5rem 2rem 6rem;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.75rem;
+      color: var(--ink);
+    }
+    .hero-text h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-text .lede {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: var(--ink-soft);
+      max-width: 32rem;
+    }
+
+    .hero-image {
+      position: relative;
+    }
+    .hero-image img {
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 2px;
+      display: block;
+      filter: saturate(0.92);
+    }
+    .hero-image::before {
+      content: "";
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      right: -1.5rem;
+      bottom: -1.5rem;
+      max-width: 380px;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      z-index: -1;
+    }
+
+    /* SECTION DIVIDER */
+    .divider {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .divider hr {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 0;
+    }
+
+    /* INTRO */
+    .intro {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    .intro p {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: 1.4rem;
+      line-height: 1.55;
+      color: var(--ink);
+      letter-spacing: -0.005em;
+    }
+    .intro p + p { margin-top: 1.5rem; }
+
+    /* OFFERINGS */
+    .offerings {
+      max-width: var(--max-width-wide);
+      margin: 0 auto;
+      padding: 2rem 2rem 6rem;
+    }
+
+    .section-label {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .offering-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .offering {
+      padding: 3rem 2rem;
+      border-right: 1px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+    }
+    .offering:last-child { border-right: none; }
+
+    .offering h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1.75rem;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.25rem;
+      color: var(--ink);
+    }
+
+    .offering p {
+      color: var(--ink-soft);
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+
+    .offering-link {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      color: var(--accent);
+      border: none;
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: gap 0.2s ease;
+    }
+    .offering-link:hover {
+      gap: 0.7rem;
+      border: none;
+    }
+    .offering-link::after {
+      content: "→";
+      transition: transform 0.2s ease;
+    }
+
+    /* FORGED IN STORY FEATURE BAND */
+    .feature-band {
+      background: var(--accent);
+      color: var(--bg);
+      padding: 6rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-band-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+    .feature-band .section-label {
+      color: rgba(250, 247, 242, 0.6);
+      margin-bottom: 1.5rem;
+    }
+    .feature-band h2 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+    .feature-band p {
+      font-size: 1.1rem;
+      line-height: 1.65;
+      color: rgba(250, 247, 242, 0.85);
+      max-width: 36rem;
+      margin: 0 auto 2.5rem;
+    }
+    .feature-band a.cta {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      color: var(--bg);
+      border: 1px solid rgba(250, 247, 242, 0.4);
+      padding: 0.9rem 2rem;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+    .feature-band a.cta:hover {
+      background: rgba(250, 247, 242, 0.1);
+      border-color: var(--bg);
+    }
+
+    /* BIO TEASER */
+    .bio-teaser {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 6rem 2rem;
+    }
+    .bio-teaser h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 2rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+      color: var(--ink);
+    }
+    .bio-teaser p {
+      color: var(--ink-soft);
+      margin-bottom: 1.25rem;
+      font-size: 1.05rem;
+    }
+    .bio-teaser .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      border: none;
+      color: var(--accent);
+      transition: gap 0.2s ease;
+    }
+    .bio-teaser .read-more:hover {
+      gap: 0.7rem;
+      border: none;
+    }
+    .bio-teaser .read-more::after { content: "→"; }
+
+    /* CONTACT CTA */
+    .contact-cta {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--rule);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    .contact-cta-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .contact-cta h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-style: italic;
+      font-size: 2rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      color: var(--ink);
+    }
+    .contact-cta p {
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+    }
+    .contact-cta a.cta {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      color: var(--bg);
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.9rem 2.25rem;
+      transition: background 0.2s ease;
+    }
+    .contact-cta a.cta:hover {
+      background: var(--accent-hover);
+      border: none;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 3rem 2rem 4rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--ink-faint);
+      max-width: var(--max-width-wide);
+      margin: 0 auto;
+    }
+    footer p { margin-bottom: 0.5rem; }
+    footer a { color: var(--ink-faint); border: none; }
+    footer a:hover { color: var(--accent); }
+
+    /* RESPONSIVE */
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 3rem 2rem 4rem;
+      }
+      .hero-image {
+        order: -1;
+        max-width: 280px;
+      }
+      .hero-image img { max-width: 280px; }
+      .hero-image::before { max-width: 280px; }
+
+      .offering-grid {
+        grid-template-columns: 1fr;
+      }
+      .offering {
+        border-right: none;
+        border-bottom: 1px solid var(--rule);
+      }
+      .offering:last-child { border-bottom: none; }
+
+      .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      nav ul {
+        gap: 1.25rem;
+        flex-wrap: wrap;
+      }
+
+      .intro p { font-size: 1.2rem; }
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      .hero { padding: 2rem 1.5rem 3rem; }
+      .intro, .bio-teaser, .feature-band, .contact-cta { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .offerings { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .site-header { padding: 1.5rem 1.5rem 0; }
+      nav ul { gap: 1rem; font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-name">
+      <a href="/">Adam Johns</a>
+      <span class="credentials">, MA, LMFT</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/therapy.html">Therapy</a></li>
+        <li><a href="/forged-in-story.html">Forged in Story</a></li>
+        <li><a href="/professionals.html">For Professionals</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Therapy for the people <em>who think differently</em>, feel deeply, and want more from the work.</h1>
+      <p class="lede">I'm a Licensed Marriage and Family Therapist in Mountlake Terrace, Washington, working with neurodivergent adults, people in transition, and the geek and gaming community — both in traditional therapy and through tabletop roleplaying games.</p>
+    </div>
+    <div class="hero-image">
+      <img src="images/adam-johns.jpg" alt="Adam Johns, MA, LMFT">
+    </div>
+  </section>
+
+  <div class="divider"><hr></div>
+
+  <section class="intro">
+    <p>Good therapy meets you where you actually are — not where a treatment manual assumes you should be.</p>
+    <p>My practice is built around people whose minds, interests, and life circumstances haven't been well served by conventional approaches. The work is grounded, collaborative, and shaped to fit you.</p>
+  </section>
+
+  <section class="offerings">
+    <div class="section-label">How I Work</div>
+    <div class="offering-grid">
+      <div class="offering">
+        <h3>Individual &amp; Family Therapy</h3>
+        <p>Weekly therapy for adults navigating depression, anxiety, identity, neurodivergence, and major life transitions. Geek-affirming, transition-friendly, and grounded in real life outside the office.</p>
+        <a href="/therapy.html" class="offering-link">Learn more</a>
+      </div>
+      <div class="offering">
+        <h3>Forged in Story</h3>
+        <p>A closed group therapy program using tabletop roleplaying games as a therapeutic tool. Ten weeks, four participants, real growth — through character, story, and shared support.</p>
+        <a href="/forged-in-story.html" class="offering-link">Learn more</a>
+      </div>
+      <div class="offering">
+        <h3>For Professionals</h3>
+        <p>Clinical supervision and coaching for therapists, plus consulting for organizations interested in gaming culture, neurodivergence, and applied roleplaying.</p>
+        <a href="/professionals.html" class="offering-link">Learn more</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature-band">
+    <div class="feature-band-inner">
+      <div class="section-label">Now Forming Groups</div>
+      <h2>What if your therapy felt like an adventure?</h2>
+      <p>Forged in Story is a ten-week therapeutic group experience using tabletop roleplaying games — where each participant's personal growth becomes part of a shared story, held by the people at the table with them.</p>
+      <a href="/forged-in-story.html" class="cta">Explore Forged in Story</a>
+    </div>
+  </section>
+
+  <section class="bio-teaser">
+    <h2>About Adam</h2>
+    <p>I'm a Licensed Marriage and Family Therapist with more than a decade of experience at the intersection of gaming culture and therapeutic practice. I'm co-founder of Game to Grow, a nonprofit that pioneered the use of tabletop roleplaying games for therapeutic and educational growth, and co-author of <em>Therapeutically Applied Role-Playing Games: The Game to Grow Method</em> (Routledge, 2023).</p>
+    <p>My practice specializes in neurodivergent individuals, adults navigating major transitions, and the geek and gaming community. I'm a gamer myself, and I bring both clinical expertise and genuine enthusiasm to the work.</p>
+    <a href="/about.html" class="read-more">Full bio and credentials</a>
+  </section>
+
+  <section class="contact-cta">
+    <div class="contact-cta-inner">
+      <h2>Ready to begin?</h2>
+      <p>Reach out to schedule a first session, ask a question, or talk through whether we'd be a good fit.</p>
+      <a href="/contact.html" class="cta">Get in touch</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Adam Johns, MA, LMFT &nbsp;·&nbsp; Mountlake Terrace, WA</p>
+    <p>© 2026 Adam Johns Counseling</p>
+  </footer>
+
+</body>
+</html>
