@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forged in Story | Group Therapy Through Roleplaying Games | Adam Johns, LMFT</title>
+  <meta name="description" content="Forged in Story is a closed group therapy program led by Adam Johns, LMFT, using tabletop roleplaying games as a therapeutic tool. Ten weeks, four participants, real growth.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf7f2;
+      --bg-soft: #f3eee5;
+      --ink: #2a2825;
+      --ink-soft: #58544e;
+      --ink-faint: #8a857d;
+      --accent: #3d5a4a;
+      --accent-hover: #2d4537;
+      --accent-deep: #2d4537;
+      --rule: #e3dccd;
+      --serif: "Source Serif 4", Georgia, serif;
+      --sans: "Inter Tight", -apple-system, BlinkMacSystemFont, sans-serif;
+      --max-width: 720px;
+      --max-width-wide: 1080px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+    a:hover { border-bottom-color: var(--accent); }
+
+    /* HEADER */
+    .site-header {
+      max-width: var(--max-width-wide);
+      margin: 0 auto;
+      padding: 2rem 2rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .site-name {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1.25rem;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .site-name a { color: var(--ink); border: none; }
+    .site-name .credentials {
+      font-style: italic;
+      color: var(--ink-faint);
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    nav a {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+      border: none;
+    }
+    nav a:hover { color: var(--accent); }
+    nav a.current {
+      color: var(--accent);
+    }
+
+    /* HERO BAND */
+    .hero-band {
+      background: var(--accent);
+      color: var(--bg);
+      padding: 6rem 2rem 7rem;
+      margin-top: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-band-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(250, 247, 242, 0.6);
+      margin-bottom: 1.5rem;
+    }
+    .hero-band h1 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+    .hero-band .subtitle {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1.3rem;
+      line-height: 1.5;
+      color: rgba(250, 247, 242, 0.85);
+      max-width: 32rem;
+      margin: 0 auto;
+    }
+    .hero-band .led-by {
+      margin-top: 2.5rem;
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      color: rgba(250, 247, 242, 0.7);
+    }
+
+    /* GENERAL SECTIONS */
+    section.prose {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    section.prose h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 2.25rem;
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+      margin-bottom: 1.5rem;
+      color: var(--ink);
+    }
+
+    section.prose h2.centered {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    section.prose p {
+      color: var(--ink-soft);
+      margin-bottom: 1.25rem;
+      font-size: 1.05rem;
+    }
+
+    section.prose p.lede {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: 1.35rem;
+      line-height: 1.55;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.005em;
+    }
+
+    /* PULL QUOTE */
+    .pull-quote {
+      max-width: var(--max-width);
+      margin: 4rem auto;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .pull-quote p {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-style: italic;
+      font-size: 1.75rem;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      color: var(--accent);
+      margin: 0;
+    }
+
+    /* WHO IS THIS FOR LIST */
+    .who-list {
+      list-style: none;
+      margin: 1.5rem 0 1.5rem;
+      padding: 0;
+    }
+    .who-list li {
+      padding: 1.25rem 0 1.25rem 2.5rem;
+      border-bottom: 1px solid var(--rule);
+      position: relative;
+      color: var(--ink-soft);
+      font-size: 1.02rem;
+      line-height: 1.55;
+    }
+    .who-list li:last-child { border-bottom: none; }
+    .who-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      top: 1.25rem;
+      color: var(--accent);
+      font-family: var(--serif);
+      font-weight: 400;
+    }
+
+    /* PREPARE / PLAY / PROCESS — Three-stage layout */
+    .stages {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 2rem 5rem;
+    }
+
+    .stage {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .stage:last-child { border-bottom: none; }
+    .stage:first-child { padding-top: 1rem; }
+
+    .stage-label {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-style: italic;
+      font-size: 1.5rem;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+      padding-top: 0.3rem;
+    }
+    .stage-label .stage-num {
+      display: block;
+      font-family: var(--sans);
+      font-style: normal;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .stage-content h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1.5rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      color: var(--ink);
+    }
+
+    .stage-content p {
+      color: var(--ink-soft);
+      margin-bottom: 1rem;
+      font-size: 1.02rem;
+    }
+    .stage-content p:last-child { margin-bottom: 0; }
+
+    /* DETAILS PANEL — Structure & Pricing */
+    .details {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 5rem 2rem;
+    }
+    .details-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .details h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 2rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: var(--ink);
+    }
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--rule);
+    }
+    .detail-row {
+      display: contents;
+    }
+    .detail-row .label, .detail-row .value {
+      padding: 1.25rem 1rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .detail-row .label {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      font-weight: 500;
+    }
+    .detail-row .value {
+      font-family: var(--serif);
+      color: var(--ink);
+      font-size: 1.05rem;
+    }
+    .details-note {
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      font-style: italic;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    /* INTEREST CTA */
+    .interest-cta {
+      padding: 6rem 2rem 5rem;
+      text-align: center;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .interest-cta .eyebrow {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 1.5rem;
+    }
+    .interest-cta h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 2.25rem;
+      letter-spacing: -0.015em;
+      margin-bottom: 1.25rem;
+      color: var(--ink);
+    }
+    .interest-cta p {
+      color: var(--ink-soft);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      max-width: 34rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .interest-cta p:last-of-type { margin-bottom: 2.5rem; }
+    .interest-cta a.cta {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      color: var(--bg);
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 1rem 2.5rem;
+      transition: background 0.2s ease;
+    }
+    .interest-cta a.cta:hover {
+      background: var(--accent-hover);
+    }
+    .interest-cta .direct-contact {
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+    }
+    .interest-cta .direct-contact a {
+      color: var(--accent);
+      border-bottom: 1px solid transparent;
+    }
+    .interest-cta .direct-contact a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 3rem 2rem 4rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--ink-faint);
+      max-width: var(--max-width-wide);
+      margin: 0 auto;
+      border-top: 1px solid var(--rule);
+    }
+    footer p { margin-bottom: 0.5rem; }
+    footer a { color: var(--ink-faint); border: none; }
+    footer a:hover { color: var(--accent); }
+
+    /* RESPONSIVE */
+    @media (max-width: 800px) {
+      .hero-band {
+        padding: 4rem 2rem 5rem;
+        margin-top: 2rem;
+      }
+      .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      nav ul {
+        gap: 1.25rem;
+        flex-wrap: wrap;
+      }
+
+      .stage {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 2.5rem 0;
+      }
+      .stage-label { padding-top: 0; }
+
+      .details-grid {
+        grid-template-columns: 1fr;
+      }
+      .detail-row .label {
+        padding-bottom: 0.25rem;
+        border-bottom: none;
+      }
+      .detail-row .value {
+        padding-top: 0.25rem;
+        padding-bottom: 1.25rem;
+      }
+
+      .pull-quote p { font-size: 1.4rem; }
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      section.prose { padding: 3rem 1.5rem; }
+      .hero-band { padding: 3.5rem 1.5rem 4rem; }
+      .details, .stages, .interest-cta { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .site-header { padding: 1.5rem 1.5rem 0; }
+      nav ul { gap: 1rem; font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-name">
+      <a href="/">Adam Johns</a>
+      <span class="credentials">, MA, LMFT</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/therapy.html">Therapy</a></li>
+        <li><a href="/forged-in-story.html" class="current">Forged in Story</a></li>
+        <li><a href="/professionals.html">For Professionals</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero-band">
+    <div class="hero-band-inner">
+      <div class="hero-eyebrow">Group Therapy Through Roleplaying Games</div>
+      <h1>Forged in Story</h1>
+      <p class="subtitle">A closed, goal-oriented group therapy experience that uses tabletop roleplaying games as a therapeutic tool.</p>
+      <p class="led-by">Led by Adam Johns, MA, LMFT — Co-Founder of Game to Grow</p>
+    </div>
+  </section>
+
+  <section class="prose">
+    <h2 class="centered">What if your therapy felt like an adventure?</h2>
+    <p class="lede">Talk therapy is powerful — but it isn't always enough. Some challenges are easier to experience than to explain. Some insights only emerge when we're in motion, making choices, playing a role, living out a story.</p>
+    <p>Forged in Story is a closed, goal-oriented group therapy experience that uses tabletop roleplaying games as a therapeutic tool. Over the course of ten weeks, you and a small group of fellow participants will share a collaborative story — and each other's journeys. Your personal goals and growth are not private — they are held by the group, woven into the story, and supported by the people sitting at the table with you.</p>
+  </section>
+
+  <div class="pull-quote">
+    <p>Some truths about ourselves are easier to meet through the characters we play.</p>
+  </div>
+
+  <section class="prose">
+    <h2>Who is this for?</h2>
+    <p>Forged in Story is designed for adults who are motivated to grow but may find traditional talk therapy limiting, frustrating, or simply not the right fit for the challenge they're facing. You might be a good fit if you:</p>
+    <ul class="who-list">
+      <li>Have struggled with depression or anxiety, and feel stuck despite previous therapy</li>
+      <li>Have a recurring pattern you can't seem to break — in relationships, at work, or in how you see yourself</li>
+      <li>Struggle with communication: being too blunt, avoiding conflict, difficulty asserting your needs, or building lasting connections</li>
+      <li>Want to build confidence, self-motivation, or a stronger sense of who you are</li>
+      <li>Feel disconnected from your own emotional experience and want a more active, embodied path to insight</li>
+      <li>Are neurodivergent and find traditional therapy formats ineffective or unstimulating</li>
+      <li>Are going through a major identity transition — career change, loss, a new chapter — and want support finding your footing</li>
+    </ul>
+    <p>You do not need to be a gamer or have any experience with roleplaying games. Curiosity and a willingness to engage are all that's required.</p>
+  </section>
+
+  <section class="prose">
+    <h2 class="centered">How it works</h2>
+    <p style="text-align: center; max-width: 36rem; margin-left: auto; margin-right: auto;">The arc of the program moves through three connected rhythms: a private session to prepare, ten weeks of collaborative play, and reflection that closes every session.</p>
+  </section>
+
+  <div class="stages">
+    <div class="stage">
+      <div class="stage-label">
+        <span class="stage-num">One</span>
+        Prepare
+      </div>
+      <div class="stage-content">
+        <h3>Your Intake Session</h3>
+        <p>Before the group begins, you'll meet individually with Adam for a one-hour intake session. Together, you'll create your character — the person you'll play in the story. This isn't just a game mechanic. Your character becomes a mirror: they might embody strengths you want to practice, or reflect patterns you're ready to change.</p>
+        <p>You'll also establish your personal quest — a therapeutic goal that you'll share with your group, and that will be woven into the story throughout the arc.</p>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="stage-label">
+        <span class="stage-num">Two</span>
+        Play
+      </div>
+      <div class="stage-content">
+        <h3>Ten Weeks of Collaborative Story</h3>
+        <p>Each week, your group of four will gather for a two-hour session. Adam serves as your Game Master — guiding the story, shaping the world, and creating moments that invite each player to encounter their personal growth edge in real time.</p>
+        <p>Your personal quest and the goals you established in your intake session are known to the group. Your teammates are part of your story, and you are part of theirs. The narrative is shared, the vulnerability is shared, and so is the support.</p>
+        <p>Sessions include variety — different scenarios, shifting challenges, moments of humor and moments of weight. No two sessions feel exactly the same.</p>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="stage-label">
+        <span class="stage-num">Three</span>
+        Process
+      </div>
+      <div class="stage-content">
+        <h3>Out-of-Game Reflection</h3>
+        <p>Each session closes with dedicated time outside the story. As a group, you'll reflect on what came up during play — the feelings, the moments of challenge or breakthrough, what felt meaningful, and what support you might need going forward.</p>
+        <p>This is where the game becomes explicitly therapeutic: a space to name what happened, process it together, and carry it into your life outside the room. This closing circle is also where the group's relationships deepen — built on shared experience, mutual support, and genuine honesty about the work you're each doing.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="prose">
+    <h2>Why this works</h2>
+    <p>One of the most powerful tools in therapy is externalization — giving a problem a form outside yourself so you can examine it, engage with it, and ultimately change your relationship to it.</p>
+    <p>Roleplaying games are a natural externalization engine. Your character carries the struggle. The quest gives it shape. The story gives it stakes. And because you are playing a role rather than talking about yourself directly, you often find it easier to take risks, try new behaviors, and discover things about yourself that talk therapy alone might never reach.</p>
+    <p>This approach draws on established therapeutic frameworks including narrative therapy, acceptance and commitment therapy, and interpersonal process group work — applied through a modality that is engaging, active, and genuinely fun.</p>
+  </section>
+
+  <section class="details">
+    <div class="details-inner">
+      <h2>Structure & Pricing</h2>
+      <div class="details-grid">
+        <div class="detail-row">
+          <div class="label">Group size</div>
+          <div class="value">Maximum 4 participants</div>
+        </div>
+        <div class="detail-row">
+          <div class="label">Session length</div>
+          <div class="value">2 hours per session</div>
+        </div>
+        <div class="detail-row">
+          <div class="label">Program length</div>
+          <div class="value">10 weeks, one session per week</div>
+        </div>
+        <div class="detail-row">
+          <div class="label">Group session cost</div>
+          <div class="value">$250 per session, paid in full at the start of each month</div>
+        </div>
+        <div class="detail-row">
+          <div class="label">Intake session</div>
+          <div class="value">Billed at standard individual therapy rate</div>
+        </div>
+        <div class="detail-row">
+          <div class="label">Insurance</div>
+          <div class="value">Not covered by insurance — payment is out of pocket</div>
+        </div>
+      </div>
+      <p class="details-note">Groups are closed — once a cohort begins, no new participants join. This protects the trust and continuity of the group. Participants may re-enroll in subsequent program arcs.</p>
+    </div>
+  </section>
+
+  <section class="interest-cta">
+    <div class="eyebrow">Now Forming Groups</div>
+    <h2>Interested? Here's how to get started.</h2>
+    <p>Groups form based on participant availability and fit. To express interest and be considered for an upcoming cohort, complete the interest form. You'll be asked about your availability, your fees and format preferences, and a bit about what brings you here.</p>
+    <p>Once enough participants with compatible availability have expressed interest, I'll reach out individually to discuss fit and schedule your intake session.</p>
+    <a href="https://forms.gle/9zf3Damm4NG4uNAE9" class="cta" target="_blank" rel="noopener">Express Interest</a>
+    <div class="direct-contact">
+      <p>Questions? Reach out directly at <a href="mailto:adam@adam-johns.com">adam@adam-johns.com</a> or call <a href="tel:+12066596479">206-659-6479</a>.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Adam Johns, MA, LMFT &nbsp;·&nbsp; Mountlake Terrace, WA</p>
+    <p>© 2026 Adam Johns Counseling</p>
+  </footer>
+
+</body>
+</html>
