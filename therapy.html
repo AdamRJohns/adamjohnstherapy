@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Therapy | Adam Johns, LMFT | Mountlake Terrace, WA</title>
+  <meta name="description" content="Individual and family therapy with Adam Johns, LMFT — specializing in neurodivergent adults, adolescents, and the geek and gaming community. Telehealth across Washington and in-person in Mountlake Terrace.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf7f2;
+      --bg-soft: #f3eee5;
+      --ink: #2a2825;
+      --ink-soft: #58544e;
+      --ink-faint: #8a857d;
+      --accent: #3d5a4a;
+      --accent-hover: #2d4537;
+      --rule: #e3dccd;
+      --serif: "Source Serif 4", Georgia, serif;
+      --sans: "Inter Tight", -apple-system, BlinkMacSystemFont, sans-serif;
+      --max-width: 720px;
+      --max-width-wide: 1080px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+    a:hover { border-bottom-color: var(--accent); }
+
+    /* HEADER */
+    .site-header {
+      max-width: var(--max-width-wide);
+      margin: 0 auto;
+      padding: 2rem 2rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .site-name {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1.25rem;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .site-name a { color: var(--ink); border: none; }
+    .site-name .credentials {
+      font-style: italic;
+      color: var(--ink-faint);
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    nav a {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+      border: none;
+    }
+    nav a:hover { color: var(--accent); }
+    nav a.current { color: var(--accent); }
+
+    /* PAGE TITLE */
+    .page-title {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 5rem 2rem 2rem;
+      text-align: center;
+    }
+    .page-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 1.5rem;
+    }
+    .page-title h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    /* PROSE SECTIONS */
+    section.prose {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    section.prose h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 2rem;
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+      margin-bottom: 1.5rem;
+      color: var(--ink);
+    }
+
+    section.prose h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1.35rem;
+      letter-spacing: -0.01em;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      color: var(--ink);
+    }
+
+    section.prose p {
+      color: var(--ink-soft);
+      margin-bottom: 1.25rem;
+      font-size: 1.05rem;
+    }
+
+    section.prose p.lede {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: 1.3rem;
+      line-height: 1.55;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.005em;
+    }
+
+    /* SECTION DIVIDER */
+    .divider {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .divider hr {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 2rem 0;
+    }
+
+    /* SPECIALTY CARDS */
+    .specialties {
+      max-width: var(--max-width-wide);
+      margin: 0 auto;
+      padding: 3rem 2rem 4rem;
+    }
+    .specialty-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .specialty {
+      padding: 3rem 2.5rem;
+      border-right: 1px solid var(--rule);
+    }
+    .specialty:nth-child(2n) { border-right: none; }
+    .specialty:nth-child(1), .specialty:nth-child(2) {
+      border-bottom: 1px solid var(--rule);
+    }
+    .specialty h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1.5rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      color: var(--ink);
+    }
+    .specialty p {
+      color: var(--ink-soft);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+    .specialty p:last-child { margin-bottom: 0; }
+
+    /* APPROACH */
+    .approach {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 5rem 2rem;
+    }
+    .approach-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .approach h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 2rem;
+      letter-spacing: -0.015em;
+      margin-bottom: 1.5rem;
+      color: var(--ink);
+    }
+    .approach p {
+      color: var(--ink-soft);
+      margin-bottom: 1.25rem;
+      font-size: 1.05rem;
+    }
+    .approach .modalities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 2rem 0 0.5rem;
+    }
+    .approach .modality {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      letter-spacing: 0.02em;
+      color: var(--accent);
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      padding: 0.5rem 1rem;
+      border-radius: 2px;
+    }
+    .approach .modality-note {
+      font-size: 0.95rem;
+      color: var(--ink-faint);
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    /* AUDIENCES */
+    .audiences {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 5rem 2rem 3rem;
+    }
+    .audiences h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 2rem;
+      letter-spacing: -0.015em;
+      margin-bottom: 0.5rem;
+      color: var(--ink);
+    }
+    .audiences > p.intro {
+      color: var(--ink-soft);
+      margin-bottom: 3rem;
+      font-size: 1.05rem;
+    }
+    .audience {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .audience:last-child { border-bottom: none; }
+    .audience h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-style: italic;
+      font-size: 1.5rem;
+      letter-spacing: -0.005em;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+    .audience p {
+      color: var(--ink-soft);
+      margin-bottom: 1rem;
+      font-size: 1.02rem;
+    }
+    .audience p:last-child { margin-bottom: 0; }
+
+    /* DETAILS PANEL */
+    .details {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 5rem 2rem;
+    }
+    .details-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .details h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 2rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: var(--ink);
+    }
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--rule);
+    }
+    .detail-row { display: contents; }
+    .detail-row .label, .detail-row .value {
+      padding: 1.25rem 1rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .detail-row .label {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      font-weight: 500;
+    }
+    .detail-row .value {
+      font-family: var(--serif);
+      color: var(--ink);
+      font-size: 1.05rem;
+    }
+    .details-note {
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 5rem 2rem;
+      text-align: center;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .cta-section h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-style: italic;
+      font-size: 2rem;
+      letter-spacing: -0.015em;
+      margin-bottom: 1rem;
+      color: var(--ink);
+    }
+    .cta-section p {
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+    }
+    .cta-section a.cta {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      color: var(--bg);
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.9rem 2.25rem;
+      transition: background 0.2s ease;
+    }
+    .cta-section a.cta:hover { background: var(--accent-hover); }
+
+    /* FOOTER */
+    footer {
+      padding: 3rem 2rem 4rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--ink-faint);
+      max-width: var(--max-width-wide);
+      margin: 0 auto;
+      border-top: 1px solid var(--rule);
+    }
+    footer p { margin-bottom: 0.5rem; }
+    footer a { color: var(--ink-faint); border: none; }
+    footer a:hover { color: var(--accent); }
+
+    /* RESPONSIVE */
+    @media (max-width: 800px) {
+      .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      nav ul { gap: 1.25rem; flex-wrap: wrap; }
+
+      .specialty-grid {
+        grid-template-columns: 1fr;
+      }
+      .specialty {
+        border-right: none;
+        border-bottom: 1px solid var(--rule);
+      }
+      .specialty:last-child { border-bottom: none; }
+
+      .details-grid {
+        grid-template-columns: 1fr;
+      }
+      .detail-row .label {
+        padding-bottom: 0.25rem;
+        border-bottom: none;
+      }
+      .detail-row .value {
+        padding-top: 0.25rem;
+        padding-bottom: 1.25rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      .page-title { padding: 3rem 1.5rem 1rem; }
+      section.prose, .audiences { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .approach, .details, .cta-section, .specialties { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .site-header { padding: 1.5rem 1.5rem 0; }
+      nav ul { gap: 1rem; font-size: 0.9rem; }
+      .specialty { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-name">
+      <a href="/">Adam Johns</a>
+      <span class="credentials">, MA, LMFT</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/therapy.html" class="current">Therapy</a></li>
+        <li><a href="/forged-in-story.html">Forged in Story</a></li>
+        <li><a href="/professionals.html">For Professionals</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-title">
+    <div class="page-eyebrow">Individual &amp; Family Therapy</div>
+    <h1>Therapy that meets you where you actually are.</h1>
+  </section>
+
+  <section class="prose">
+    <p class="lede">Good therapy is collaborative. It moves at your pace, takes your interests and ways of thinking seriously, and helps you build a clearer relationship with yourself — your patterns, your needs, your strengths.</p>
+    <p>My practice focuses on adults and adolescents whose minds, lives, or interests haven't been well served by conventional therapy formats. Many of my clients are neurodivergent. Many are part of the geek and gaming community. Many are navigating a life transition or a recurring pattern they want to change. The throughline is that one-size-fits-all therapy hasn't fit — and we work together to build something that does.</p>
+  </section>
+
+  <section class="specialties">
+    <div class="specialty-grid">
+      <div class="specialty">
+        <h3>Neurodivergent Adults &amp; Teens</h3>
+        <p>ADHD, autism, OCD, AuDHD, and other neurotypes — whether formally diagnosed or self-identified. The work isn't about masking better or making your brain look more typical. It's about understanding how you actually work, building skills that fit how you're wired, and developing a positive relationship with your neurodivergence without villainizing it.</p>
+        <p>Practical accommodations: pace flexibility, special interests treated as therapeutic material rather than distractions, and an approach that respects how you process rather than imposing how I do.</p>
+      </div>
+      <div class="specialty">
+        <h3>The Geek &amp; Gaming Community</h3>
+        <p>Geek culture isn't a hobby — it's often a primary language for identity, relationships, and meaning-making. Therapy that doesn't speak that language has to translate everything, and a lot gets lost in translation.</p>
+        <p>I'm a gamer myself. We can talk about your D&amp;D campaign, your guild drama, your collection, your stories — and the things they're helping you work through or avoid — without me needing the metaphors explained first.</p>
+      </div>
+      <div class="specialty">
+        <h3>Adults in Transition</h3>
+        <p>Career changes, identity shifts, the end of a chapter, the start of a new one, the slow erosion of who you thought you'd be by now. Transitions can be exciting, painful, disorienting, or all three at once — and they often surface patterns and questions that have been waiting for the right moment.</p>
+      </div>
+      <div class="specialty">
+        <h3>Recurring Patterns &amp; Stuck Places</h3>
+        <p>The same relationship dynamic, the same self-defeating loop, the same conflict at work, the same wall you keep hitting. When something keeps happening, it's worth understanding the parts of you that keep showing up — and what they're protecting, communicating, or asking for.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="approach">
+    <div class="approach-inner">
+      <h2>How I work</h2>
+      <p>I draw on several therapeutic frameworks — not as a rotating buffet, but as different lenses for what's actually happening for you. The work tends to include:</p>
+      <p><strong>Skills</strong> for managing thoughts, emotions, and behaviors when you're in the middle of them — drawn from CBT (cognitive behavioral therapy) and DBT (dialectical behavior therapy). Useful for the moments when you need a tool, not a theory.</p>
+      <p><strong>Self-understanding</strong> through exploration of your inner experience — the different parts of you that show up, the patterns underneath the patterns, the things you tell yourself and the things you don't. This draws on IFS (Internal Family Systems) and the broader project of getting curious about who you are rather than just trying to fix who you're not.</p>
+      <p><strong>Narrative</strong> — looking at the stories you're carrying about yourself and the world, where those stories came from, which ones are still serving you, and what other stories might be available. Drawn from narrative therapy and ACT (acceptance and commitment therapy).</p>
+      <p><strong>Strengths-oriented framing.</strong> A lot of therapy focuses on what's wrong. I think it's at least as important to understand what's working, what you've already gotten through, and what you bring to the situations in front of you.</p>
+      <div class="modalities">
+        <span class="modality">CBT</span>
+        <span class="modality">DBT</span>
+        <span class="modality">IFS</span>
+        <span class="modality">ACT</span>
+        <span class="modality">Narrative Therapy</span>
+      </div>
+      <p class="modality-note">Modalities are tools, not identities. The right combination depends on you.</p>
+    </div>
+  </section>
+
+  <section class="audiences">
+    <h2>Who I see</h2>
+    <p class="intro">My practice is open to adults, young adults, adolescents, and families — with most therapy happening one-on-one. Here's how the different formats tend to work.</p>
+
+    <div class="audience">
+      <h3>Adults &amp; young adults</h3>
+      <p>Individual therapy for adults navigating depression, anxiety, neurodivergence, identity, relationships, work, and meaning. This is the heart of my practice and where I have the most availability — including daytime and early afternoon hours, which can be hard to find with other therapists.</p>
+    </div>
+
+    <div class="audience">
+      <h3>Adolescents &amp; teens</h3>
+      <p>Individual therapy for adolescents, often with neurodivergent presentations, social or academic struggles, identity exploration, or family conflict. Afterschool availability tends to fill quickly — earlier slots are often more flexible. I welcome inquiries from parents looking for a therapist who actually understands their teen's interests rather than treating them as symptoms.</p>
+    </div>
+
+    <div class="audience">
+      <h3>Families</h3>
+      <p>Family therapy is most often requested as a complement to individual therapy when I'm seeing a child or teen — bringing parents and siblings into the work where it makes sense. Standalone family therapy is less common in my practice but available if it fits what you need.</p>
+    </div>
+  </section>
+
+  <section class="details">
+    <div class="details-inner">
+      <h2>Logistics</h2>
+      <div class="details-grid">
+        <div class="detail-row">
+          <div class="label">Session length</div>
+          <div class="value">50 minutes</div>
+        </div>
+        <div class="detail-row">
+          <div class="label">Session fee</div>
+          <div class="value">$220 per session</div>
+        </div>
+        <div class="detail-row">
+          <div class="label">Telehealth</div>
+          <div class="value">Tuesdays, Wednesdays, Thursdays — anywhere in Washington State</div>
+        </div>
+        <div class="detail-row">
+          <div class="label">In person</div>
+          <div class="value">Tuesdays in Mountlake Terrace, WA</div>
+        </div>
+        <div class="detail-row">
+          <div class="label">Insurance</div>
+          <div class="value">Self-pay only. Superbills available for out-of-network reimbursement.</div>
+        </div>
+        <div class="detail-row">
+          <div class="label">Sliding scale</div>
+          <div class="value">Limited slots available — please ask.</div>
+        </div>
+      </div>
+      <p class="details-note">If cost is a barrier and a sliding scale slot isn't available, I'm happy to refer you to clinicians and practices that may be a better fit. Reach out and we'll find a path.</p>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ready to start?</h2>
+    <p>Reach out to schedule a first session, ask a question, or talk through whether we'd be a good fit.</p>
+    <a href="/contact.html" class="cta">Get in touch</a>
+  </section>
+
+  <footer>
+    <p>Adam Johns, MA, LMFT &nbsp;·&nbsp; Mountlake Terrace, WA</p>
+    <p>© 2026 Adam Johns Counseling</p>
+  </footer>
+
+</body>
+</html>
