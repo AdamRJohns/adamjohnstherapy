@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultation &amp; Speaking | Adam Johns, LMFT</title>
+  <meta name="description" content="Adam Johns, LMFT — speaking, training, and professional consultation on therapeutic roleplaying games, neurodivergence, gaming culture in clinical practice, and game design.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf7f2;
+      --bg-soft: #f3eee5;
+      --ink: #2a2825;
+      --ink-soft: #58544e;
+      --ink-faint: #8a857d;
+      --accent: #3d5a4a;
+      --accent-hover: #2d4537;
+      --rule: #e3dccd;
+      --serif: "Source Serif 4", Georgia, serif;
+      --sans: "Inter Tight", -apple-system, BlinkMacSystemFont, sans-serif;
+      --max-width: 720px;
+      --max-width-wide: 1080px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+    a:hover { border-bottom-color: var(--accent); }
+
+    /* HEADER */
+    .site-header {
+      max-width: var(--max-width-wide);
+      margin: 0 auto;
+      padding: 2rem 2rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .site-name {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1.25rem;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .site-name a { color: var(--ink); border: none; }
+    .site-name .credentials {
+      font-style: italic;
+      color: var(--ink-faint);
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    nav a {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+      border: none;
+    }
+    nav a:hover { color: var(--accent); }
+    nav a.current { color: var(--accent); }
+
+    /* PAGE TITLE */
+    .page-title {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 5rem 2rem 2rem;
+      text-align: center;
+    }
+    .page-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 1.5rem;
+    }
+    .page-title h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    /* PROSE */
+    section.prose {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    section.prose h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 2rem;
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+      margin-bottom: 1.25rem;
+      color: var(--ink);
+    }
+
+    section.prose p {
+      color: var(--ink-soft);
+      margin-bottom: 1.25rem;
+      font-size: 1.05rem;
+    }
+
+    section.prose p.lede {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: 1.3rem;
+      line-height: 1.55;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.005em;
+    }
+
+    /* OFFERINGS — Speaking, Game Design, Professional Consultation */
+    .offerings {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2rem 2rem 4rem;
+    }
+    .offering {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .offering:last-child { border-bottom: none; }
+    .offering h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 2rem;
+      letter-spacing: -0.015em;
+      margin-bottom: 1.25rem;
+      color: var(--ink);
+    }
+    .offering p {
+      color: var(--ink-soft);
+      margin-bottom: 1.25rem;
+      font-size: 1.05rem;
+    }
+    .offering .list-label {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .offering ul.simple-list {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1rem;
+    }
+    .offering ul.simple-list li {
+      padding: 0.6rem 0 0.6rem 1.5rem;
+      position: relative;
+      color: var(--ink-soft);
+      font-size: 1.02rem;
+      line-height: 1.55;
+      border-bottom: 1px solid var(--rule);
+    }
+    .offering ul.simple-list li:last-child { border-bottom: none; }
+    .offering ul.simple-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-family: var(--serif);
+    }
+
+    /* SELECTED WORK / TALKS */
+    .selected-work {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 5rem 2rem;
+    }
+    .selected-work-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .selected-work h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 2rem;
+      letter-spacing: -0.015em;
+      margin-bottom: 0.5rem;
+      color: var(--ink);
+      text-align: center;
+    }
+    .selected-work .intro {
+      text-align: center;
+      color: var(--ink-soft);
+      margin-bottom: 2.5rem;
+      font-size: 1.02rem;
+    }
+    .talks {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      border-top: 1px solid var(--rule);
+    }
+    .talk {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: 200px 1fr auto;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .talk-venue {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      font-weight: 500;
+    }
+    .talk-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      color: var(--ink);
+      font-style: italic;
+    }
+    .talk-link {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      color: var(--accent);
+      border-bottom: 1px solid transparent;
+      white-space: nowrap;
+    }
+    .talk-link:hover { border-bottom-color: var(--accent); }
+
+    /* PODCAST */
+    .podcast {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 5rem 2rem 3rem;
+    }
+    .podcast h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 2rem;
+      letter-spacing: -0.015em;
+      margin-bottom: 1.25rem;
+      color: var(--ink);
+    }
+    .podcast p {
+      color: var(--ink-soft);
+      margin-bottom: 1.25rem;
+      font-size: 1.05rem;
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 5rem 2rem;
+      text-align: center;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .cta-section h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-style: italic;
+      font-size: 2rem;
+      letter-spacing: -0.015em;
+      margin-bottom: 1rem;
+      color: var(--ink);
+    }
+    .cta-section p {
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+      max-width: 36rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-section a.cta {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      color: var(--bg);
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.9rem 2.25rem;
+      transition: background 0.2s ease;
+    }
+    .cta-section a.cta:hover { background: var(--accent-hover); }
+
+    /* FOOTER */
+    footer {
+      padding: 3rem 2rem 4rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--ink-faint);
+      max-width: var(--max-width-wide);
+      margin: 0 auto;
+      border-top: 1px solid var(--rule);
+    }
+    footer p { margin-bottom: 0.5rem; }
+    footer a { color: var(--ink-faint); border: none; }
+    footer a:hover { color: var(--accent); }
+
+    /* RESPONSIVE */
+    @media (max-width: 800px) {
+      .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      nav ul { gap: 1.25rem; flex-wrap: wrap; }
+
+      .talk {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      .page-title { padding: 3rem 1.5rem 1rem; }
+      section.prose, .offerings, .podcast, .cta-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .selected-work { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .site-header { padding: 1.5rem 1.5rem 0; }
+      nav ul { gap: 1rem; font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-name">
+      <a href="/">Adam Johns</a>
+      <span class="credentials">, MA, LMFT</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/therapy.html">Therapy</a></li>
+        <li><a href="/forged-in-story.html">Forged in Story</a></li>
+        <li><a href="/professionals.html" class="current">Consultation &amp; Speaking</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-title">
+    <div class="page-eyebrow">Consultation &amp; Speaking</div>
+    <h1>Expertise at the intersection of clinical practice and gaming culture.</h1>
+  </section>
+
+  <section class="prose">
+    <p class="lede">I work with clinicians, organizations, and creators on the questions that sit at the meeting point of mental health and tabletop roleplaying games.</p>
+    <p>For more than a decade, I've been developing, teaching, and practicing the therapeutic application of tabletop roleplaying games — co-founding the nonprofit that pioneered the field, lead-designing a published therapeutic RPG used in clinics around the world, co-authoring the clinical training manual for the modality, and speaking on the topic to audiences of clinicians and game designers across North America.</p>
+    <p>I'm available for speaking engagements, professional trainings, podcast and media appearances, game design consultation, and project-based consultation for organizations working in these areas.</p>
+  </section>
+
+  <section class="offerings">
+    <div class="offering">
+      <h2>Speaking &amp; Training</h2>
+      <p>I deliver keynotes, conference talks, and full-length professional trainings for therapists, educators, and gaming-industry audiences. Past venues include the Washington Association for Marriage and Family Therapy annual symposium (keynote), every North American PAX over the course of my time at Game to Grow, and clinical training programs across the country. Audience sizes have ranged from small CE workshops to rooms of 400–500.</p>
+      <div class="list-label">Topics I speak and train on</div>
+      <ul class="simple-list">
+        <li>Therapeutically applied tabletop roleplaying games — theory, method, and clinical implementation</li>
+        <li>Game mastering for therapeutic and educational settings</li>
+        <li>Working clinically with neurodivergent adults and adolescents</li>
+        <li>Gaming culture and geek identity in mental health practice</li>
+        <li>Group therapy through narrative play</li>
+      </ul>
+      <p>I'm currently booking talks and trainings for 2026 and beyond.</p>
+    </div>
+
+    <div class="offering">
+      <h2>Game Design Consultation</h2>
+      <p>I work with designers and studios on tabletop roleplaying game projects where therapeutic, educational, or accessibility considerations matter. As lead designer of <a href="https://www.icdl.com/dir/critical-core" target="_blank" rel="noopener">Critical Core</a> — the therapeutic RPG system I took from concept to publication at Game to Grow — and as a credited game designer on <a href="https://www.randallhamptonart.com/little-game-masters" target="_blank" rel="noopener">Little Game Masters</a> by Randall Hampton, I bring both clinical perspective and practical game-design experience to a project.</p>
+      <div class="list-label">Available for</div>
+      <ul class="simple-list">
+        <li>Game design consultation on therapeutic or educational TTRPGs</li>
+        <li>Content review for mental health accuracy and neurodivergence representation</li>
+        <li>Sensitivity reading and clinical advisement on narrative content</li>
+        <li>Mechanic design for projects involving emotional or social skill-building</li>
+      </ul>
+    </div>
+
+    <div class="offering">
+      <h2>Professional Consultation</h2>
+      <p>I'm available for project-based consultation with clinicians, clinics, schools, and organizations working at the intersection of mental health and gaming culture. This is consultation, not supervision — I'm not a state-approved clinical supervisor — but I'm regularly contacted by colleagues and organizations looking for expertise on therapeutic gaming, neurodivergent clinical work, or program design.</p>
+      <div class="list-label">Common consultation areas</div>
+      <ul class="simple-list">
+        <li>Building or refining a therapeutic gaming program</li>
+        <li>Neurodivergent-affirmative clinical practice</li>
+        <li>Geek-affirmative therapy and gaming culture in practice</li>
+        <li>Group therapy program design and facilitation</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="selected-work">
+    <div class="selected-work-inner">
+      <h2>Selected talks</h2>
+      <p class="intro">A few publicly available talks. Most professional trainings are not recorded.</p>
+      <div class="talks">
+        <div class="talk">
+          <div class="talk-venue">PAX Unplugged 2018</div>
+          <div class="talk-title">Roll for Healing: Therapeutic Game Master Roundtable</div>
+          <a href="https://www.youtube.com/watch?v=iT__GioqnGA" class="talk-link" target="_blank" rel="noopener">Watch →</a>
+        </div>
+        <div class="talk">
+          <div class="talk-venue">PAX West 2018</div>
+          <div class="talk-title">Roll for Healing: Therapeutic Game Master Roundtable</div>
+          <a href="https://www.youtube.com/watch?v=uNs_RKu7OEw" class="talk-link" target="_blank" rel="noopener">Watch →</a>
+        </div>
+        <div class="talk">
+          <div class="talk-venue">PAX Unplugged 2018</div>
+          <div class="talk-title">Collaborative Homebrew with Scott Kurtz</div>
+          <a href="https://www.youtube.com/watch?v=SGMlFVPAgRo" class="talk-link" target="_blank" rel="noopener">Watch →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="podcast">
+    <h2>Next Session Podcast</h2>
+    <p>I co-host <a href="https://www.nextsessionpodcast.com/" target="_blank" rel="noopener">Next Session Podcast</a> with my wife — an advice podcast for tabletop game masters covering craft, table dynamics, and the practical art of running a game well. It's not therapy-oriented, but it's a useful reference for what I sound like in an extended conversation and the quality of the production setup if you're considering me for a guest appearance.</p>
+    <p>Available for guest appearances on podcasts in the therapy, gaming, neurodivergence, and tabletop spaces.</p>
+  </section>
+
+  <section class="cta-section">
+    <h2>Have a project in mind?</h2>
+    <p>Whether it's a talk, a training, a consult, or something I haven't thought of — reach out with the scope of what you're working on, and I'll get back to you with rates and availability.</p>
+    <a href="/contact.html" class="cta">Get in touch</a>
+  </section>
+
+  <footer>
+    <p>Adam Johns, MA, LMFT &nbsp;·&nbsp; Mountlake Terrace, WA</p>
+    <p>© 2026 Adam Johns Counseling</p>
+  </footer>
+
+</body>
+</html>
