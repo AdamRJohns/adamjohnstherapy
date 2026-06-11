@@ -46,6 +46,18 @@
     }
     a:hover { border-bottom-color: var(--accent); }
 
+    /* In-body links (inside paragraph copy) get a permanent visible underline */
+    p a, li a, .stage-content a, .approach a, .specialty a, .audience a,
+    .offering p a, .podcast a, .bio-teaser p a, .credentials-inner p a,
+    .cred-row .value a, .talk-title a, .contact-detail .value a, .crisis-note p a {
+      border-bottom: 1px solid var(--rule);
+    }
+    p a:hover, li a:hover, .stage-content a:hover, .approach a:hover, .specialty a:hover, .audience a:hover,
+    .offering p a:hover, .podcast a:hover, .bio-teaser p a:hover, .credentials-inner p a:hover,
+    .cred-row .value a:hover, .talk-title a:hover, .contact-detail .value a:hover, .crisis-note p a:hover {
+      border-bottom-color: var(--accent);
+    }
+
     /* HEADER */
     .site-header {
       max-width: var(--max-width-wide);
@@ -88,14 +100,44 @@
     nav a:hover { color: var(--accent); }
     nav a.current { color: var(--accent); }
 
-    /* PAGE TITLE */
-    .page-title {
-      max-width: var(--max-width);
+    /* PAGE TITLE — Therapy page uses a two-column hero with headshot for visual distinction from homepage */
+    .page-hero {
+      max-width: var(--max-width-wide);
       margin: 0 auto;
-      padding: 5rem 2rem 2rem;
-      text-align: center;
+      padding: 4rem 2rem 2rem;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3.5rem;
+      align-items: center;
     }
-    .page-eyebrow {
+    .page-hero .hero-image {
+      position: relative;
+      max-width: 280px;
+    }
+    .page-hero .hero-image img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 2px;
+      display: block;
+      filter: saturate(0.92);
+    }
+    .page-hero .hero-image::before {
+      content: "";
+      position: absolute;
+      top: 1.2rem;
+      left: 1.2rem;
+      right: -1.2rem;
+      bottom: -1.2rem;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      z-index: -1;
+    }
+    .page-hero .hero-text {
+      max-width: 36rem;
+    }
+    .page-hero .page-eyebrow {
       font-family: var(--sans);
       font-size: 0.8rem;
       font-weight: 500;
@@ -104,10 +146,10 @@
       color: var(--ink-faint);
       margin-bottom: 1.5rem;
     }
-    .page-title h1 {
+    .page-hero h1 {
       font-family: var(--serif);
       font-weight: 400;
-      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-size: clamp(2.25rem, 4.5vw, 3.25rem);
       line-height: 1.1;
       letter-spacing: -0.02em;
       color: var(--ink);
@@ -401,6 +443,18 @@
       }
       nav ul { gap: 1.25rem; flex-wrap: wrap; }
 
+      .page-hero {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+        padding: 2.5rem 2rem 1rem;
+      }
+      .page-hero .hero-image {
+        justify-self: center;
+        max-width: 220px;
+      }
+      .page-hero .hero-text { max-width: 100%; }
+
       .specialty-grid {
         grid-template-columns: 1fr;
       }
@@ -425,7 +479,7 @@
 
     @media (max-width: 480px) {
       body { font-size: 16px; }
-      .page-title { padding: 3rem 1.5rem 1rem; }
+      .page-hero { padding: 2rem 1.5rem 0.5rem; }
       section.prose, .audiences { padding-left: 1.5rem; padding-right: 1.5rem; }
       .approach, .details, .cta-section, .specialties { padding-left: 1.5rem; padding-right: 1.5rem; }
       .site-header { padding: 1.5rem 1.5rem 0; }
@@ -452,9 +506,14 @@
     </nav>
   </header>
 
-  <section class="page-title">
-    <div class="page-eyebrow">Individual &amp; Family Therapy</div>
-    <h1>Therapy that meets you where you actually are.</h1>
+  <section class="page-hero">
+    <div class="hero-image">
+      <img src="images/adam-johns.jpg" alt="Adam Johns, MA, LMFT">
+    </div>
+    <div class="hero-text">
+      <div class="page-eyebrow">Individual &amp; Family Therapy</div>
+      <h1>Therapy that meets you where you actually are.</h1>
+    </div>
   </section>
 
   <section class="prose">

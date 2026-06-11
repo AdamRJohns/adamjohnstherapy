@@ -46,6 +46,18 @@
     }
     a:hover { border-bottom-color: var(--accent); }
 
+    /* In-body links (inside paragraph copy) get a permanent visible underline */
+    p a, li a, .stage-content a, .approach a, .specialty a, .audience a,
+    .offering p a, .podcast a, .bio-teaser p a, .credentials-inner p a,
+    .cred-row .value a, .talk-title a, .contact-detail .value a, .crisis-note p a {
+      border-bottom: 1px solid var(--rule);
+    }
+    p a:hover, li a:hover, .stage-content a:hover, .approach a:hover, .specialty a:hover, .audience a:hover,
+    .offering p a:hover, .podcast a:hover, .bio-teaser p a:hover, .credentials-inner p a:hover,
+    .cred-row .value a:hover, .talk-title a:hover, .contact-detail .value a:hover, .crisis-note p a:hover {
+      border-bottom-color: var(--accent);
+    }
+
     /* HEADER */
     .site-header {
       max-width: var(--max-width-wide);
@@ -460,7 +472,7 @@
 
   <section class="intro">
     <p>Good therapy meets you where you actually are — not where a treatment manual assumes you should be.</p>
-    <p>My practice is built around people whose minds, interests, and life circumstances haven't been well served by conventional approaches. The work is grounded, collaborative, and shaped to fit you.</p>
+    <p>My practice is built around people whose minds, interests, and life circumstances haven't been well served by conventional approaches. The work is grounded, collaborative, and shaped to fit&nbsp;you.</p>
   </section>
 
   <section class="offerings">
@@ -495,7 +507,7 @@
 
   <section class="bio-teaser">
     <h2>About Adam</h2>
-    <p>I'm a Licensed Marriage and Family Therapist with more than a decade of experience at the intersection of gaming culture and therapeutic practice. I'm co-founder of Game to Grow, a nonprofit that pioneered the use of tabletop roleplaying games for therapeutic and educational growth, and co-author of <em>Therapeutically Applied Role-Playing Games: The Game to Grow Method</em> (Routledge, 2023).</p>
+    <p>I'm a Licensed Marriage and Family Therapist with more than a decade of experience at the intersection of gaming culture and therapeutic practice. I'm co-founder of Game to Grow, a nonprofit that pioneered the use of tabletop roleplaying games for therapeutic and educational growth, and co-author of <a href="https://www.routledge.com/Therapeutically-Applied-Role-Playing-Games-The-Game-to-Grow-Method/Kilmer-Davis-Kilmer-Johns/p/book/9781032251851" target="_blank" rel="noopener"><em>Therapeutically Applied Role-Playing Games: The Game to Grow Method</em></a> (Routledge, 2023).</p>
     <p>My practice specializes in neurodivergent individuals, adults navigating major transitions, and the geek and gaming community. I'm a gamer myself, and I bring both clinical expertise and genuine enthusiasm to the work.</p>
     <a href="/about.html" class="read-more">Full bio and credentials</a>
   </section>

@@ -46,6 +46,18 @@
     }
     a:hover { border-bottom-color: var(--accent); }
 
+    /* In-body links (inside paragraph copy) get a permanent visible underline */
+    p a, li a, .stage-content a, .approach a, .specialty a, .audience a,
+    .offering p a, .podcast a, .bio-teaser p a, .credentials-inner p a,
+    .cred-row .value a, .talk-title a, .contact-detail .value a, .crisis-note p a {
+      border-bottom: 1px solid var(--rule);
+    }
+    p a:hover, li a:hover, .stage-content a:hover, .approach a:hover, .specialty a:hover, .audience a:hover,
+    .offering p a:hover, .podcast a:hover, .bio-teaser p a:hover, .credentials-inner p a:hover,
+    .cred-row .value a:hover, .talk-title a:hover, .contact-detail .value a:hover, .crisis-note p a:hover {
+      border-bottom-color: var(--accent);
+    }
+
     /* HEADER */
     .site-header {
       max-width: var(--max-width-wide);
