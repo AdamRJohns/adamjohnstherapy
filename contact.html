@@ -213,6 +213,16 @@
     .form-submit {
       margin-top: 0.5rem;
     }
+    .form-status {
+      margin-top: 1rem;
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      min-height: 1.5rem;
+    }
+    .form-status.error {
+      color: #8a2a2a;
+    }
     button[type="submit"] {
       display: inline-block;
       font-family: var(--sans);
@@ -380,7 +390,7 @@
   <section class="contact-layout">
     <div class="contact-form-wrap">
       <h2>Send a message</h2>
-      <form action="https://formspree.io/f/xjgzlevp" method="POST">
+      <form id="contact-form" action="https://formspree.io/f/xjgzlevp" method="POST">
         <div class="form-field">
           <label for="name">Name <span class="req">*</span></label>
           <input type="text" id="name" name="name" required>
@@ -414,10 +424,9 @@
           <textarea id="message" name="message" required placeholder="Share whatever you'd like me to know — what you're looking for, any questions, scheduling constraints, etc."></textarea>
         </div>
 
-        <input type="hidden" name="_next" value="https://adamjohnstherapy.com/thanks.html">
-
         <div class="form-submit">
           <button type="submit">Send message</button>
+          <div class="form-status" id="form-status" aria-live="polite"></div>
         </div>
       </form>
     </div>
@@ -464,6 +473,48 @@
     <p>Adam Johns, MA, LMFT &nbsp;·&nbsp; Mountlake Terrace, WA</p>
     <p>© 2026 Adam Johns Counseling</p>
   </footer>
+  <script>
+    // Intercept form submission, send to Formspree via fetch, redirect on success.
+    // This is the workaround for Formspree's free tier removing custom redirect support.
+    (function() {
+      var form = document.getElementById('contact-form');
+      var status = document.getElementById('form-status');
+      if (!form) return;
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        status.textContent = 'Sending…';
+        status.classList.remove('error');
+
+        var data = new FormData(form);
+
+        fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        }).then(function(response) {
+          if (response.ok) {
+            window.location.href = '/thanks.html';
+          } else {
+            response.json().then(function(json) {
+              status.classList.add('error');
+              if (json && json.errors && json.errors.length) {
+                status.textContent = json.errors.map(function(e) { return e.message; }).join(', ');
+              } else {
+                status.textContent = "Something went wrong. Please try again, or email adam@adam-johns.com directly.";
+              }
+            }).catch(function() {
+              status.classList.add('error');
+              status.textContent = "Something went wrong. Please try again, or email adam@adam-johns.com directly.";
+            });
+          }
+        }).catch(function() {
+          status.classList.add('error');
+          status.textContent = "Couldn't reach the server. Please try again, or email adam@adam-johns.com directly.";
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
